@@ -25,7 +25,7 @@ const BookingAppointment = ({ date, treatment,setTreatment,refetch }) => {
           phone:event.target.phone.value
         }
 
-        fetch('http://localhost:5000/booking',{
+        fetch('https://morning-fortress-41142.herokuapp.com/booking',{
           method:"POST",
           headers:{
             'content-type':'application/json'
