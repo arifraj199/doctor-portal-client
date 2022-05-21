@@ -8,7 +8,7 @@ import UserRow from "./UserRow";
 const User = () => {
 
   const { data: users, isLoading,refetch } = useQuery("users", () =>
-    fetch("http://localhost:5000/users",{
+    fetch("https://morning-fortress-41142.herokuapp.com/users",{
         method:"GET",
         headers:{
             authorization:`Bearer ${localStorage.getItem('accessToken')}`
@@ -35,7 +35,7 @@ const User = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
+            {users?.map((user) => (
               <UserRow key={user._id} user={user} refetch={refetch}></UserRow>
                 // <tr>
                 //     <th>1</th>
